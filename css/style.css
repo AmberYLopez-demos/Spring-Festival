@@ -4,7 +4,7 @@
     font-size: 1.5625vw;
     font-family: "Microsoft Yahei";
 }
-
+/*在H5中，html,body也是块状元素，有内容撑开，由于我们的定位都是absolute,fixed脱离了文档流，所以要使得他俩均为100%*/
 html, body {
     height: 100%;
     overflow: hidden;
@@ -45,7 +45,7 @@ html, body {
 
 /*music 动画*/
 .music > img.play {
-    -webkit-animation: music_disc 4s linear infinite; /*动画名称，持续秒数，匀速，重复*/
+    -webkit-animation: music_disc 4s linear infinite; /*动画名称，持续秒数，匀速，每次播放完重复*/
     -o-animation: music_disc 4s linear infinite;
     animation: music_disc 4s linear infinite;
 }
@@ -74,6 +74,7 @@ html, body {
 
 /* page bg*/
 .page {
+    /*使得这三页重叠*/
     position: absolute;
     height: 100%;
     width: 100%;
@@ -93,6 +94,7 @@ html, body {
 /* page 1*/
 #page1 > .bg {
     background: url("../images/p1_bg.jpg") no-repeat center center;
+    /*让背景跟随div的大小变化而变化*/
     background-size: 100%;
 }
 
@@ -111,6 +113,7 @@ html, body {
     padding-top: 31vh;
     text-align: center;
     color: #fff;
+    /*???*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -124,7 +127,7 @@ html, body {
     bottom: 0;
     left: 0;
     z-index: -1;
-    content: '';
+    content: '';/*对于一个伪类，要有content*/
     border-radius: 50%;
     margin: auto;
     width: 30vw;
@@ -136,7 +139,7 @@ html, body {
     -ms-box-shadow: 0 0 10vw 10vw #d60b3b;
     -o-box-shadow: 0 0 10vw 10vw #d60b3b;
     box-shadow: 0 0 10vw 10vw #d60b3b;
-
+                                       /*无限次播放。 动画轮流反向播放*/
     -webkit-animation:p1_lantern 0.5s infinite alternate;
     -o-animation:p1_lantern 0.5s infinite alternate;
     animation:p1_lantern 0.5s infinite alternate;
@@ -166,7 +169,7 @@ html, body {
     height: 18.63vh;
     margin: auto;
 }
-
+/*第一页的文字*/
 #page1 > .p1_word {
     font-size: 2.134rem;
     position: absolute;
@@ -343,6 +346,7 @@ html, body {
 
 #page3 {
     display: none;
+    /*使得平移有过度效果*/
     -webkit-transition:.5s;
     transition:.5s;
 }

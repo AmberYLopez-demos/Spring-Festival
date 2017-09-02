@@ -6,6 +6,7 @@ window.onload = function () {
     var music = document.getElementById('music');
     var audio = document.getElementsByTagName('audio')[0];
     //当音乐停止时，自动停止光盘旋转效果
+    //audio的api
     audio.addEventListener("ended", function (event) {
         music.setAttribute("class", "");
     }, false);
@@ -28,6 +29,7 @@ window.onload = function () {
         page3.style.display = "block";
         page3.style.top = "100%";
 
+        //第二页离开时，第三页自大哦你划入
         setTimeout(function () {
             page2.setAttribute("class", "page fadeOut");
             page3.setAttribute("class", "page fadeIn");
